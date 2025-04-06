@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Food</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+</head>
+<body class="bg-gray-100">
+    <div class="max-w-lg mx-auto mt-10 bg-white p-6 rounded shadow">
+        <h1 class="text-2xl font-bold text-center mb-6">Order Food</h1>
+        <form action="submit_order.php" method="POST" enctype="multipart/form-data">
+            <!-- Customer Name -->
+            <div class="mb-4">
+                <label for="name" class="block text-sm font-medium">Name</label>
+                <input type="text" id="name" name="name" class="w-full p-2 border rounded" placeholder="Enter your name" required>
+            </div>
+
+            <!-- Telephone -->
+            <div class="mb-4">
+                <label for="telephone" class="block text-sm font-medium">Telephone</label>
+                <input type="tel" id="telephone" name="telephone" class="w-full p-2 border rounded" placeholder="Enter your phone number" required>
+            </div>
+
+            <!-- Food Selection -->
+            <div class="mb-4">
+                <label for="food" class="block text-sm font-medium">Select Food</label>
+                <select id="food" name="food" class="w-full p-2 border rounded" required>
+                    <option value="" disabled selected>Select a food item</option>
+                    <option value="pizza">Pizza</option>
+                    <option value="burger">Burger</option>
+                    <option value="sushi">Sushi</option>
+                    <option value="pasta">Pasta</option>
+                    <option value="salad">Salad</option>
+                </select>
+            </div>
+
+            <!-- Quantity -->
+            <div class="mb-4">
+                <label for="quantity" class="block text-sm font-medium">Quantity</label>
+                <input type="number" id="quantity" name="quantity" class="w-full p-2 border rounded" placeholder="Enter quantity" min="1" required>
+            </div>
+
+            <!-- Additional Notes -->
+            <div class="mb-4">
+                <label for="notes" class="block text-sm font-medium">Additional Notes</label>
+                <textarea id="notes" name="notes" class="w-full p-2 border rounded" rows="3" placeholder="Any special requests?"></textarea>
+            </div>
+
+            <!-- Upload Payment Slip -->
+            <div class="mb-4">
+                <label for="slip" class="block text-sm font-medium">Upload Payment Slip</label>
+                <input type="file" id="slip" name="slip" class="w-full p-2 border rounded" required>
+            </div>
+
+            <!-- Submit and Cancel Buttons -->
+            <div class="flex justify-end space-x-2">
+                <button type="button" class="bg-gray-500 text-white px-4 py-2 rounded cancel">Cancel</button>
+                <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded">Submit Order</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log("Order Food Form Loaded");
+        });
+    </script>
+</body>
+</html>
